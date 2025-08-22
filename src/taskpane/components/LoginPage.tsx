@@ -68,7 +68,7 @@ const LoginPage: React.FC = () => {
     borderWidth: "1px",
     outline: "none" as const,
     transition: "border-color 0.2s ease",
-  };
+  }; 
 
   return (
     <div style={{  margin: "0 auto ",display:'flex',flexDirection:'column', alignItems:'center',justifyContent:'center', width:'100%' }}>
