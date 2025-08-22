@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { FormContext } from "./Router";
 import NavigationArrows from "./NavigationArrows";
+import { Button } from "@fluentui/react-components";
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -70,10 +71,11 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div style={{ padding: "2rem", maxWidth: "400px", margin: "0 auto" }}>
+    <div style={{  margin: "0 auto ",display:'flex',flexDirection:'column', alignItems:'center',justifyContent:'center', width:'100%' }}>
       <NavigationArrows />
-      <h2 style={{ marginBottom: "1rem" }}>Login</h2>
-      <form onSubmit={handleSubmit} noValidate>
+      <h2 style={{ marginBottom: "1rem" }}> <img src={require('../../../assets/Logo.png')} width={130} height={'auto'} alt="" /></h2>
+      <div style={{textAlign:'center' ,padding:'10px'}}>Manage your events by creating and sharing Meeting links , also can create contact and attach as recipients.</div>
+      <form style={{width:'100%',display:'flex',flexDirection:'column', alignItems:'center',justifyContent:'center'}} onSubmit={handleSubmit} noValidate>
         <div style={{ marginBottom: "1rem" }}>
           <label>Email</label>
           <input
@@ -112,6 +114,7 @@ const LoginPage: React.FC = () => {
                 : passwordFocused
                 ? "#007bff"
                 : "#ccc",
+                width:'100%'
             }}
           />
           {passwordError && (
@@ -119,20 +122,13 @@ const LoginPage: React.FC = () => {
           )}
         </div>
 
-        <button
+        <Button
           type="submit"
-          style={{
-            width: "100%",
-            padding: "0.75rem",
-            backgroundColor: "#007bff",
-            color: "#fff",
-            border: "none",
-             borderRadius:"5px",
-            cursor: "pointer",
-          }}
+           appearance="primary"
+           
         >
           Continue
-        </button>
+        </Button>
       </form>
     </div>
   );
